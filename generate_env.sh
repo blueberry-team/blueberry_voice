@@ -4,6 +4,7 @@
 TARGET_DIR=$1
 
 # .env 파일 생성
-echo "# API 키를 추가해주세요." > "$TARGET_DIR/.env"
-echo "API_KEY=your_api_key_here" >> "$TARGET_DIR/.env"
+echo "# please replace 'your_api_key_here' with your actual API key" > "$TARGET_DIR/.env"
+echo "GOOGLE_API_KEY=your_api_key_here" >> "$TARGET_DIR/.env"
+echo "GPT_API_KEY=your_api_key_here" >> "$TARGET_DIR/.env"
 echo "# Other environment variables can be added here" >> "$TARGET_DIR/.env"

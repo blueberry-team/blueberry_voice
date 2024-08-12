@@ -16,7 +16,8 @@ if ([string]::IsNullOrWhiteSpace($TargetDir)) {
 # .env 파일 내용
 $envContent = @"
 # please replace 'your_api_key_here' with your actual API key
-API_KEY=your_api_key_here
+GOOGLE_API_KEY=your_api_key_here
+GPT_API_KEY=your_api_key_here
 # Other environment variables can be added here
 "@
 
