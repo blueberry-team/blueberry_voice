@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class OnboardingPageItem extends StatelessWidget {
   final String title;
@@ -18,7 +19,7 @@ class OnboardingPageItem extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Image.asset(image, height: 300),
+          SvgPicture.asset(image, height: 300),
           SizedBox(height: 30),
           Text(
             title,

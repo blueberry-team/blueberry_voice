@@ -121,6 +121,7 @@ flutter:
   uses-material-design: true
   assets:
     - assets/
+    - assets/images/
     - assets/600x400/
     - assets/300x420/
     - assets/700x150/
