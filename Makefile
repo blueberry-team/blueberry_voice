@@ -14,7 +14,11 @@ else
 endif
 
 # Define the default target to call all necessary targets
-all: init analyze apply format buildRunner
+all: init analyze apply format buildRunner generate-env
+
+# Define the init target to initialize the project
+setting : init analyze buildRunner
+lint : analyze apply format
 
 # Define the init target
 init:
@@ -61,3 +65,6 @@ else
 	@$(FLUTTER) pub run build_runner build --delete-conflicting-outputs
 endif
 
+# .env 파일 생성 명령
+generate-env:
+    @bash generate_env.sh
