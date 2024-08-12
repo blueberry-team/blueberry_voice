@@ -14,7 +14,7 @@ else
 endif
 
 # Define the default target to call all necessary targets
-all: init analyze apply format buildRunner generate-env
+all: init analyze apply format buildRunner env
 
 # Define the init target to initialize the project
 setting : init analyze buildRunner
@@ -66,5 +66,5 @@ else
 endif
 
 # .env 파일 생성 명령
-generate-env:
+env:
     @bash generate_env.sh
