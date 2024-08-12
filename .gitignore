@@ -76,4 +76,7 @@ lib/firebase_options.dart
 
 # secret key
 sign_in_key.dart
-/lib/.env
+
+# env
+.env
+lib/.env
