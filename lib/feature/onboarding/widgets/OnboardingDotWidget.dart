@@ -5,8 +5,7 @@ import '../OnboardingData.dart';
 class OnboardingDotWidget extends StatelessWidget {
   final int currentPage;
 
-  const OnboardingDotWidget({Key? key, required this.currentPage})
-      : super(key: key);
+  const OnboardingDotWidget({super.key, required this.currentPage});
 
   @override
   Widget build(BuildContext context) {

@@ -24,7 +24,7 @@ class TopScreen extends ConsumerWidget {
     final selectedIndex = ref.watch(selectedIndexProvider);
 
     final List<Widget> pages = [
-      OnboardingScreen(),
+      const OnboardingScreen(),
       const MatchScreen(),
       const LoginScreen(),
     ];

@@ -8,10 +8,10 @@ class OnboardingPageButton extends StatelessWidget {
   final VoidCallback onNextPressed;
 
   const OnboardingPageButton({
-    Key? key,
+    super.key,
     required this.currentPage,
     required this.onNextPressed,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -21,13 +21,13 @@ class OnboardingPageButton extends StatelessWidget {
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(30),
         ),
-        padding: EdgeInsets.symmetric(horizontal: 50, vertical: 15),
+        padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 15),
       ),
       child: Text(
         currentPage == OnboardingData.pageDataList.length - 1
             ? AppStrings.onboardingScreenButtonStart
             : AppStrings.onboardingScreenButtonNext,
-        style: TextStyle(fontSize: 18),
+        style: const TextStyle(fontSize: 18),
       ),
     );
   }

@@ -8,10 +8,10 @@ class OnboardingPageViewBuilder extends StatelessWidget {
   final Function(int) onPageChanged;
 
   const OnboardingPageViewBuilder({
-    Key? key,
+    super.key,
     required this.pageController,
     required this.onPageChanged,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

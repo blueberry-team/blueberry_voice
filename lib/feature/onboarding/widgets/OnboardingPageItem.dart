@@ -6,7 +6,8 @@ class OnboardingPageItem extends StatelessWidget {
   final String description;
   final String image;
 
-  OnboardingPageItem({
+  const OnboardingPageItem({
+    super.key,
     required this.title,
     required this.description,
     required this.image,
@@ -20,19 +21,19 @@ class OnboardingPageItem extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           SvgPicture.asset(image, height: 300),
-          SizedBox(height: 30),
+          const SizedBox(height: 30),
           Text(
             title,
-            style: TextStyle(
+            style: const TextStyle(
               fontSize: 24,
               fontWeight: FontWeight.bold,
             ),
           ),
-          SizedBox(height: 15),
+          const SizedBox(height: 15),
           Text(
             description,
             textAlign: TextAlign.center,
-            style: TextStyle(fontSize: 16),
+            style: const TextStyle(fontSize: 16),
           ),
         ],
       ),

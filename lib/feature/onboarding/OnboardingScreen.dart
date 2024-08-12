@@ -8,6 +8,8 @@ import 'widgets/OnboardingDotWidget.dart';
 import 'widgets/OnboardingPageButton.dart';
 
 class OnboardingScreen extends StatefulWidget {
+  const OnboardingScreen({super.key});
+
   @override
   _OnboardingScreenState createState() => _OnboardingScreenState();
 }

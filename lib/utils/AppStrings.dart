@@ -185,5 +185,4 @@ class AppStrings {
   static const String onboardingDescription3 = '여정을 시작해봅시다!';
   static const String onboardingScreenButtonStart = '시작하기';
   static const String onboardingScreenButtonNext = '다음';
-
 }
