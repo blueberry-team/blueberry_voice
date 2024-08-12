@@ -1,11 +1,13 @@
 import 'dart:convert';
+
 import 'package:blueberry_flutter_template/model/GoogleMapPlace.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:http/http.dart' as http;
 
 //Google Map API key 등록 필요
-const String apiKey = ''; //TODO: 'Google Map API Key 입력 필요
+String apiKey = dotenv.env['GOOGLE_MAP_API_KEY'] ?? '';
 // Android : AndroidManifest.xml 에 API Key와 권한 추가 필요
 // iOS : AppDelegate.swift, Info.plist 에 API Key와 권한 추가 필요
 

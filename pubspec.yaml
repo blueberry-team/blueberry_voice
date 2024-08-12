@@ -108,6 +108,10 @@ dependencies:
   # map
   google_maps_flutter: ^2.9.0
   geolocator: ^12.0.0
+  flutter_dotenv: ^5.1.0
+
+  # apiKey
+
 
 dev_dependencies:
   flutter_test:
@@ -116,6 +120,7 @@ dev_dependencies:
   # Generate
   json_serializable: ^6.8.0
   build_runner: ^2.4.11
+  envied_generator: ^0.5.4+1
 
 flutter:
   uses-material-design: true

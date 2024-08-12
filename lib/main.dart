@@ -7,6 +7,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:intl/date_symbol_data_local.dart';
 
@@ -19,6 +20,11 @@ Future<void> main() async {
   runZonedGuarded(() async {
     // 날짜 형식 초기화
     WidgetsFlutterBinding.ensureInitialized();
+    if (kIsWeb) {
+      talker.info('Web environment can not use dotenv');
+    } else {
+      await dotenv.load();
+    }
     await initializeDateFormatting('en_US', null);
     await Firebase.initializeApp(
       options: DefaultFirebaseOptions.currentPlatform,

@@ -7,11 +7,11 @@
 /windows/
 
 # Allow Android platform folder.
-!android/app/src/main/AndroidManifest.xml
-!ios/Podfile
+!/android/app/src/main/AndroidManifest.xml
+!/ios/Podfile
 
-!ios/.gitignore
-!android/.gitignore
+!/ios/.gitignore
+!/android/.gitignore
 
 # Miscellaneous
 *.class
