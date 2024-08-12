@@ -10,6 +10,9 @@
 !android/app/src/main/AndroidManifest.xml
 !ios/Podfile
 
+!ios/.gitignore
+!android/.gitignore
+
 # Miscellaneous
 *.class
 *.log
