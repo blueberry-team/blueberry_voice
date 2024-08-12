@@ -1,8 +1,7 @@
-import 'package:blueberry_flutter_template/feature/post/PostScreen.dart';
+import 'package:blueberry_flutter_template/feature/onboarding/OnboardingScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../feature/admin/AdminUserListPage.dart';
 import '../feature/login/LoginScreen.dart';
 import '../feature/match/MatchScreen.dart';
 
@@ -25,10 +24,9 @@ class TopScreen extends ConsumerWidget {
     final selectedIndex = ref.watch(selectedIndexProvider);
 
     final List<Widget> pages = [
-      const PostScreen(),
+      OnboardingScreen(),
       const MatchScreen(),
       const LoginScreen(),
-      const AdminUserListPage()
     ];
 
     return Scaffold(
@@ -53,11 +51,7 @@ class TopScreen extends ConsumerWidget {
           BottomNavigationBarItem(
             icon: Icon(Icons.account_circle),
             label: 'MyPage',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.admin_panel_settings),
-            label: 'Admin',
-          ),
+          )
         ],
         currentIndex: selectedIndex,
         onTap: (index) =>
