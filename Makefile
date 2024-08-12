@@ -17,7 +17,7 @@ endif
 all: init analyze apply format buildRunner env
 
 # Define the init target to initialize the project
-setting : init analyze buildRunner
+setting : init analyze buildRunner env
 lint : analyze apply format
 
 # Define the init target
