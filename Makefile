@@ -65,6 +65,12 @@ else
 	@$(FLUTTER) pub run build_runner build --delete-conflicting-outputs
 endif
 
-# .env 파일 생성 명령
+# Define the env target for Unix-like systems
 env:
-    @bash generate_env.sh
+ifeq ($(DETECTED_OS), Windows)
+	@echo "Using PowerShell script to create .env file."
+	@powershell -ExecutionPolicy Bypass -File generate_env.ps1 $/lib
+else
+	@echo "Using bash script to create .env file."
+	@bash generate_env.sh $/lib
+endif
