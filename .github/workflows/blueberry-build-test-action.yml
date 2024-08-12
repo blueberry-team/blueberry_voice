@@ -16,6 +16,11 @@ jobs:
           firebase_options_dart: ${{secrets.FIREBASE_OPTION}}
         run: echo "$firebase_options_dart" > lib/firebase_options.dart
 
+      - name: Create .env file
+        env:
+          ENV_CONTENT: ${{ secrets.ENV_CONTENT }}
+        run: echo "$ENV_CONTENT" > .env
+
       - name: 'Set Flutter Version Latest'
         uses: subosito/flutter-action@v2
         with:
