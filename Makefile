@@ -17,8 +17,18 @@ endif
 all: init analyze apply format buildRunner env
 
 # Define the init target to initialize the project
-setting : init analyze buildRunner env
+first : create init analyze buildRunner env
+setting : init buildRunner
 lint : analyze apply format
+
+# Define the init target
+create:
+	@echo "Create ios and android floder..."
+ifeq ($(DETECTED_OS), Windows)
+	@flutter create .
+else
+	@$(FLUTTER) create .
+endif
 
 # Define the init target
 init:
