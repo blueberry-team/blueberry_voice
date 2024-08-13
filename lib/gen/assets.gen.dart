@@ -95,6 +95,16 @@ class $AssetsIconGen {
   List<String> get values => [icDownArrow, icLeftArrow, icRightArrow];
 }
 
+class $AssetsImagesGen {
+  const $AssetsImagesGen();
+
+  /// File path: assets/images/sample.svg
+  String get sample => 'assets/images/sample.svg';
+
+  /// List of all assets
+  List<String> get values => [sample];
+}
+
 class $AssetsLoginPageImagesGen {
   const $AssetsLoginPageImagesGen();
 
@@ -132,8 +142,13 @@ class $AssetsLogoGen {
   /// File path: assets/logo/logo_5.png
   AssetGenImage get logo5 => const AssetGenImage('assets/logo/logo_5.png');
 
+  /// File path: assets/logo/mbti_logo.webp
+  AssetGenImage get mbtiLogo =>
+      const AssetGenImage('assets/logo/mbti_logo.webp');
+
   /// List of all assets
-  List<AssetGenImage> get values => [logo1, logo2, logo3, logo4, logo5];
+  List<AssetGenImage> get values =>
+      [logo1, logo2, logo3, logo4, logo5, mbtiLogo];
 }
 
 class Assets {
@@ -143,6 +158,7 @@ class Assets {
   static const $Assets600x400Gen a600x400 = $Assets600x400Gen();
   static const $Assets700x150Gen a700x150 = $Assets700x150Gen();
   static const $AssetsIconGen icon = $AssetsIconGen();
+  static const $AssetsImagesGen images = $AssetsImagesGen();
   static const $AssetsLoginPageImagesGen loginPageImages =
       $AssetsLoginPageImagesGen();
   static const $AssetsLogoGen logo = $AssetsLogoGen();

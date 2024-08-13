@@ -175,4 +175,14 @@ class AppStrings {
   static const String button_openConfigMenu = '설정 열기';
   static const String button_sendMessage = '112 문자보내기';
   static const String errorMessage_unknownError = '알 수 없는 오류가 발생했습니다.';
+
+  // Onboarding Screen
+  static const String onboardingTitle = '환영합니다!';
+  static const String onboardingDescription = '우리 앱으로 최고의 경험을 해보세요.';
+  static const String onboardingTitle2 = '연결 유지';
+  static const String onboardingDescription2 = '사랑하는 사람들과 항상 연결되세요.';
+  static const String onboardingTitle3 = '시작하기';
+  static const String onboardingDescription3 = '여정을 시작해봅시다!';
+  static const String onboardingScreenButtonStart = '시작하기';
+  static const String onboardingScreenButtonNext = '다음';
 }
