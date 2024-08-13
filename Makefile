@@ -14,7 +14,7 @@ else
 endif
 
 # Define the default target to call all necessary targets
-all: init analyze apply format buildRunner env
+all: init analyze apply format buildRunner
 
 # Define the init target to initialize the project
 first : create init analyze buildRunner env
