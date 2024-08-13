@@ -120,11 +120,11 @@ dev_dependencies:
   # Generate
   json_serializable: ^6.8.0
   build_runner: ^2.4.11
-  envied_generator: ^0.5.4+1
 
 flutter:
   uses-material-design: true
   assets:
+    - .env
     - assets/
     - assets/600x400/
     - assets/300x420/

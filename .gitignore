@@ -8,6 +8,8 @@
 
 # Allow Android platform folder.
 !/android/app/src/main/AndroidManifest.xml
+!/android/app/src/main/app/build.gradle
+!/android/app/src/main/res/values/strings.xml
 !/ios/Podfile
 
 !/ios/.gitignore
@@ -85,4 +87,3 @@ sign_in_key.dart
 
 # env
 .env
-lib/.env

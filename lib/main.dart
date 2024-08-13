@@ -20,12 +20,6 @@ Future<void> main() async {
   runZonedGuarded(() async {
     // 날짜 형식 초기화
     WidgetsFlutterBinding.ensureInitialized();
-    if (kIsWeb) {
-      talker.info('Web environment can not use dotenv');
-    } else {
-      await dotenv.load();
-    }
-    await initializeDateFormatting('en_US', null);
     await Firebase.initializeApp(
       options: DefaultFirebaseOptions.currentPlatform,
     );
@@ -40,6 +34,13 @@ Future<void> main() async {
       FirebaseCrashlytics.instance.setCrashlyticsCollectionEnabled(true);
     }
 
+    if (kIsWeb) {
+      talker.info('Web environment can not use dotenv');
+    } else {
+      await dotenv.load(fileName: '.env');
+    }
+
+    await initializeDateFormatting('en_US', null);
     runApp(const ProviderScope(
       child: MyApp(),
     ));
