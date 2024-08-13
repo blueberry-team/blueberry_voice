@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../feature/login/LoginScreen.dart';
+import '../feature/map/PoliceMapScreen.dart';
 import '../feature/match/MatchScreen.dart';
 
 /// TopScreen.dart
@@ -24,7 +25,7 @@ class TopScreen extends ConsumerWidget {
     final selectedIndex = ref.watch(selectedIndexProvider);
 
     final List<Widget> pages = [
-      const OnboardingScreen(),
+      const PoliceMapScreen(),
       const MatchScreen(),
       const LoginScreen(),
     ];

@@ -16,6 +16,20 @@ endif
 # Define the default target to call all necessary targets
 all: init analyze apply format buildRunner
 
+# Define the init target to initialize the project
+first : create init analyze buildRunner env
+setting : init buildRunner
+lint : analyze apply format
+
+# Define the init target
+create:
+	@echo "Create ios and android floder..."
+ifeq ($(DETECTED_OS), Windows)
+	@flutter create .
+else
+	@$(FLUTTER) create .
+endif
+
 # Define the init target
 init:
 	@echo "Initializing Flutter project..."
@@ -61,3 +75,12 @@ else
 	@$(FLUTTER) pub run build_runner build --delete-conflicting-outputs
 endif
 
+# Define the env target for Unix-like systems
+env:
+ifeq ($(DETECTED_OS), Windows)
+	@echo "Using PowerShell script to create .env file."
+	@powershell -ExecutionPolicy Bypass -File generate_env.ps1
+else
+	@echo "Using bash script to create .env file."
+	@bash generate_env.sh
+endif
