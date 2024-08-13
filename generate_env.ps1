@@ -1,17 +1,7 @@
 # PowerShell 스크립트로 .env 파일 생성
 
-param (
-    [string]$TargetDir
-)
-
-# 디버깅 출력
-Write-Output "Target Directory: $TargetDir"
-
-# 빈 문자열이 전달되었는지 확인
-if ([string]::IsNullOrWhiteSpace($TargetDir)) {
-    Write-Error "Target directory is not specified or is empty."
-    exit 1
-}
+# 현재 작업 중인 디렉터리 경로 가져오기
+$TargetDir = Get-Location
 
 # .env 파일 내용
 $envContent = @"

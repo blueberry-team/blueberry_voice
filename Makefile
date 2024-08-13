@@ -79,8 +79,8 @@ endif
 env:
 ifeq ($(DETECTED_OS), Windows)
 	@echo "Using PowerShell script to create .env file."
-	@powershell -ExecutionPolicy Bypass -File generate_env.ps1 $/lib
+	@powershell -ExecutionPolicy Bypass -File generate_env.ps1
 else
 	@echo "Using bash script to create .env file."
-	@bash generate_env.sh $/lib
+	@bash generate_env.sh
 endif
