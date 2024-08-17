@@ -1,10 +1,8 @@
-import 'package:blueberry_flutter_template/feature/onboarding/OnboardingScreen.dart';
+import 'package:blueberry_flutter_template/feature/map/PoliceMapScreen.dart';
+import 'package:blueberry_flutter_template/feature/mypage/MyPageScreen.dart';
+import 'package:blueberry_flutter_template/feature/voiceOutput/VoiceOutputScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-
-import '../feature/login/LoginScreen.dart';
-import '../feature/map/PoliceMapScreen.dart';
-import '../feature/match/MatchScreen.dart';
 
 /// TopScreen.dart
 ///
@@ -25,9 +23,9 @@ class TopScreen extends ConsumerWidget {
     final selectedIndex = ref.watch(selectedIndexProvider);
 
     final List<Widget> pages = [
+      const VoiceOutputScreen(),
       const PoliceMapScreen(),
-      const MatchScreen(),
-      const LoginScreen(),
+      const MyPageScreen(),
     ];
 
     return Scaffold(
@@ -42,17 +40,17 @@ class TopScreen extends ConsumerWidget {
         backgroundColor: Colors.blueGrey[100],
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: Icon(Icons.podcasts),
-            label: 'Post',
+            icon: Icon(Icons.mic),
+            label: 'Voice',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.pets),
-            label: 'match',
+            icon: Icon(Icons.map),
+            label: 'Map',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.account_circle),
+            icon: Icon(Icons.person),
             label: 'MyPage',
-          )
+          ),
         ],
         currentIndex: selectedIndex,
         onTap: (index) =>

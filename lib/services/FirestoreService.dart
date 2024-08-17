@@ -1,15 +1,9 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../model/UserModel.dart';
 
-final firebaseStoreServiceProvider =
-    Provider((ref) => FirestoreService(FirebaseFirestore.instance));
-
 class FirestoreService {
-  final FirebaseFirestore _db;
-
-  FirestoreService(this._db);
+  final FirebaseFirestore _db = FirebaseFirestore.instance;
 
   // User 정보 생성
   Future<void> createUser(UserModel user) async {
