@@ -1,7 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-/// FirebaseAuthServiceProvider.dart
+/// FirebaseAuthService.dart
 ///
 /// Firebase Auth Service Provider
 /// - FirebaseAuthService를 제공하는 Provider
@@ -15,14 +14,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 ///
 ///  @jwson-automation
 
-final firebaseAuthServiceProvider = Provider<FirebaseAuthService>((ref) {
-  return FirebaseAuthService(FirebaseAuth.instance);
-});
-
 class FirebaseAuthService {
-  final FirebaseAuth _auth;
-
-  FirebaseAuthService(this._auth);
+  final FirebaseAuth _auth = FirebaseAuth.instance;
 
   // 사용자 상태 스트림
   Stream<User?> get user => _auth.authStateChanges();

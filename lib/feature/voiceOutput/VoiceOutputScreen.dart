@@ -1,7 +1,10 @@
-import './widget/VoiceOutputWidget.dart';
 import 'package:flutter/material.dart';
 
+import './widget/VoiceOutputWidget.dart';
+
 class VoiceOutputScreen extends StatelessWidget {
+  static const name = 'VoiceOutputScreen';
+
   const VoiceOutputScreen({super.key});
 
   @override

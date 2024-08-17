@@ -1,15 +1,17 @@
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
-class Place {
+class GoogleMapPlaceModel {
   final String name;
   final LatLng location;
   final String? phoneNumber;
 
-  Place({required this.name, required this.location, this.phoneNumber});
+  GoogleMapPlaceModel(
+      {required this.name, required this.location, this.phoneNumber});
 
-  factory Place.fromJson(Map<String, dynamic> json, String? phoneNumber) {
+  factory GoogleMapPlaceModel.fromJson(
+      Map<String, dynamic> json, String? phoneNumber) {
     final location = json['geometry']['location'];
-    return Place(
+    return GoogleMapPlaceModel(
       name: json['name'],
       location: LatLng(location['lat'], location['lng']),
       phoneNumber: phoneNumber,

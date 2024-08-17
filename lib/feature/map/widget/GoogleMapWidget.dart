@@ -2,7 +2,7 @@ import 'dart:async';
 import 'package:blueberry_flutter_template/feature/map/provider/LocationProvider.dart';
 import 'package:blueberry_flutter_template/feature/map/provider/PoliceStationProvider.dart';
 import 'package:blueberry_flutter_template/feature/map/provider/SeletedPlaceProvider.dart';
-import 'package:blueberry_flutter_template/model/GoogleMapPlace.dart';
+import 'package:blueberry_flutter_template/model/GoogleMapPlaceModel.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
@@ -11,7 +11,7 @@ import 'package:url_launcher/url_launcher.dart';
 class GoogleMapWidget extends ConsumerWidget {
   final Completer<GoogleMapController> googleMapControllerCompleter;
   final LatLng locationState;
-  final AsyncValue<List<Place>> policeStationsAsyncValue;
+  final AsyncValue<List<GoogleMapPlaceModel>> policeStationsAsyncValue;
 
   const GoogleMapWidget({
     required this.googleMapControllerCompleter,
@@ -22,7 +22,8 @@ class GoogleMapWidget extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    ref.listen<Place?>(selectedPlaceProvider, (previous, next) async {
+    ref.listen<GoogleMapPlaceModel?>(selectedPlaceProvider,
+        (previous, next) async {
       if (next != null) {
         try {
           final controller = await googleMapControllerCompleter.future;

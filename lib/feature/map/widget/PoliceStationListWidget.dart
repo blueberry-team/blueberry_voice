@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'package:blueberry_flutter_template/feature/map/provider/PoliceStationProvider.dart';
 import 'package:blueberry_flutter_template/feature/map/provider/SeletedPlaceProvider.dart';
-import 'package:blueberry_flutter_template/model/GoogleMapPlace.dart';
+import 'package:blueberry_flutter_template/model/GoogleMapPlaceModel.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
@@ -10,7 +10,7 @@ import 'package:url_launcher/url_launcher.dart';
 class PoliceStationListWidget extends ConsumerWidget {
   final LatLng locationState;
   final Completer<GoogleMapController> googleMapControllerCompleter;
-  final AsyncValue<List<Place>> policeStationsAsyncValue;
+  final AsyncValue<List<GoogleMapPlaceModel>> policeStationsAsyncValue;
 
   const PoliceStationListWidget({
     required this.locationState,
