@@ -1,7 +1,9 @@
+import 'package:blueberry_flutter_template/feature/onboarding/OnboardingScreen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import 'TopScreen.dart';
 
@@ -28,6 +30,9 @@ class _SplashScreenState extends ConsumerState<SplashScreen> {
 
   /// 앱 초기화를 단계별로 수행하는 함수
   Future<void> _initializeApp() async {
+    final prefs = await SharedPreferences.getInstance();
+    final hasSeenOnboarding = prefs.getBool('hasSeenOnboarding') ?? false;
+
     try {
       // 단계별로 로딩 상태를 업데이트
       // 단계별 로딩은 사용하지 않음.
@@ -39,7 +44,10 @@ class _SplashScreenState extends ConsumerState<SplashScreen> {
       await Future.delayed(const Duration(seconds: 3));
       // 초기화 완료 후 메인 화면으로 전환
       if (mounted) {
-        context.goNamed(TopScreen.name);
+        hasSeenOnboarding
+                ? context.goNamed(OnboardingScreen.name) // 온보딩 화면을 본 경우
+                : context.goNamed(OnboardingScreen.name) // 온보딩 화면을 보지 않은 경우
+            ;
       }
     } catch (e) {
       // 초기화 중 발생한 오류 처리

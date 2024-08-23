@@ -110,7 +110,12 @@ dependencies:
   geolocator: ^12.0.0
   flutter_dotenv: ^5.1.0
 
-  # apiKey
+  # shared preference
+  shared_preferences: ^2.2.3
+
+  # audio player
+  audioplayers: ^6.0.0
+
 
 
 dev_dependencies:
@@ -120,6 +125,7 @@ dev_dependencies:
   # Generate
   json_serializable: ^6.8.0
   build_runner: ^2.4.11
+
 
 flutter:
   uses-material-design: true
@@ -133,6 +139,11 @@ flutter:
     - assets/logo/
     - assets/icon/
     - assets/login_page_images/
+    - assets/voice/
+    - assets/voice/voice_1.mp3
+    - assets/voice/voice_2.mp3
+    - assets/voice/voice_3.mp3
+    - assets/voice/voice_4.mp3
 
 # Run Commands to generate splash view
 # 1) flutter clean

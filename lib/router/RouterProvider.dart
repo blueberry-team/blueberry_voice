@@ -1,3 +1,4 @@
+import 'package:blueberry_flutter_template/feature/onboarding/OnboardingScreen.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
@@ -26,8 +27,14 @@ final routerProvider = Provider<GoRouter>((ref) {
         name: TopScreen.name,
         builder: (context, state) =>
             ResponsiveLayoutBuilder(context, const TopScreen()),
-        routes: [GoRoute(path: '')],
+        routes: [],
       ),
+      GoRoute(
+        path: '/onboarding',
+        name: OnboardingScreen.name,
+        builder: (context, state) =>
+            ResponsiveLayoutBuilder(context, const OnboardingScreen()),
+      )
     ],
   );
 });
