@@ -1,10 +1,8 @@
 import 'dart:async';
+
 import 'package:blueberry_flutter_template/feature/map/provider/LocationProvider.dart';
 import 'package:blueberry_flutter_template/feature/map/provider/PermissionProvider.dart';
 import 'package:blueberry_flutter_template/feature/map/provider/PoliceStationProvider.dart';
-import 'package:blueberry_flutter_template/feature/map/widget/GoogleMapWidget.dart';
-import 'package:blueberry_flutter_template/feature/map/widget/PermissionDeniedWidget.dart';
-import 'package:blueberry_flutter_template/feature/map/widget/PoliceStationListWidget.dart';
 import 'package:blueberry_flutter_template/feature/map/widget/SendMessageWidget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -47,38 +45,40 @@ class _PoliceMapScreenState extends ConsumerState<PoliceMapScreen> {
             child: Padding(
               padding: const EdgeInsets.all(8.0),
               child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Expanded(
-                    child: policeStationsAsyncValue.when(
-                      data: (policeStations) => GoogleMapWidget(
-                        googleMapControllerCompleter:
-                            _googleMapControllerCompleter,
-                        locationState: locationState,
-                        policeStationsAsyncValue: policeStationsAsyncValue,
-                      ),
-                      loading: () =>
-                          const Center(child: CircularProgressIndicator()),
-                      error: (error, stack) =>
-                          Center(child: Text('Error: $error')),
-                    ),
-                  ),
+                  // Expanded(
+                  //   child: policeStationsAsyncValue.when(
+                  //     data: (policeStations) => GoogleMapWidget(
+                  //       googleMapControllerCompleter:
+                  //           _googleMapControllerCompleter,
+                  //       locationState: locationState,
+                  //       policeStationsAsyncValue: policeStationsAsyncValue,
+                  //     ),
+                  //     loading: () =>
+                  //         const Center(child: CircularProgressIndicator()),
+                  //     error: (error, stack) =>
+                  //         Center(child: Text('Error: $error')),
+                  //   ),
+                  // ),
                   const SizedBox(height: 8),
-                  Expanded(
-                    child: PoliceStationListWidget(
-                      googleMapControllerCompleter:
-                          _googleMapControllerCompleter,
-                      locationState: locationState,
-                      policeStationsAsyncValue: policeStationsAsyncValue,
-                    ),
-                  ),
-                  SendMessage(locationState: locationState),
+                  // Expanded(
+                  //   child: PoliceStationListWidget(
+                  //     googleMapControllerCompleter:
+                  //         _googleMapControllerCompleter,
+                  //     locationState: locationState,
+                  //     policeStationsAsyncValue: policeStationsAsyncValue,
+                  //   ),
+                  // ),
+                  Center(child: SendMessage(locationState: locationState)),
                 ],
               ),
             ),
           );
-        } else {
-          return PermissionDeniedWidget(permissionStatus: permissionStatus);
         }
+        // else {
+        //   return PermissionDeniedWidget(permissionStatus: permissionStatus);
+        // }
       }(),
     );
   }

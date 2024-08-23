@@ -127,6 +127,9 @@ class $AssetsLoginPageImagesGen {
 class $AssetsLogoGen {
   const $AssetsLogoGen();
 
+  /// File path: assets/logo/logo.svg
+  String get logo => 'assets/logo/logo.svg';
+
   /// File path: assets/logo/logo_1.png
   AssetGenImage get logo1 => const AssetGenImage('assets/logo/logo_1.png');
 
@@ -146,14 +149,38 @@ class $AssetsLogoGen {
   AssetGenImage get mbtiLogo =>
       const AssetGenImage('assets/logo/mbti_logo.webp');
 
+  /// File path: assets/logo/voice_logo.png
+  AssetGenImage get voiceLogo =>
+      const AssetGenImage('assets/logo/voice_logo.png');
+
   /// List of all assets
-  List<AssetGenImage> get values =>
-      [logo1, logo2, logo3, logo4, logo5, mbtiLogo];
+  List<dynamic> get values =>
+      [logo, logo1, logo2, logo3, logo4, logo5, mbtiLogo, voiceLogo];
+}
+
+class $AssetsVoiceGen {
+  const $AssetsVoiceGen();
+
+  /// File path: assets/voice/voice_1.mp3
+  String get voice1 => 'assets/voice/voice_1.mp3';
+
+  /// File path: assets/voice/voice_2.mp3
+  String get voice2 => 'assets/voice/voice_2.mp3';
+
+  /// File path: assets/voice/voice_3.mp3
+  String get voice3 => 'assets/voice/voice_3.mp3';
+
+  /// File path: assets/voice/voice_4.mp3
+  String get voice4 => 'assets/voice/voice_4.mp3';
+
+  /// List of all assets
+  List<String> get values => [voice1, voice2, voice3, voice4];
 }
 
 class Assets {
   Assets._();
 
+  static const String aEnv = '.env';
   static const $Assets300x420Gen a300x420 = $Assets300x420Gen();
   static const $Assets600x400Gen a600x400 = $Assets600x400Gen();
   static const $Assets700x150Gen a700x150 = $Assets700x150Gen();
@@ -162,6 +189,10 @@ class Assets {
   static const $AssetsLoginPageImagesGen loginPageImages =
       $AssetsLoginPageImagesGen();
   static const $AssetsLogoGen logo = $AssetsLogoGen();
+  static const $AssetsVoiceGen voice = $AssetsVoiceGen();
+
+  /// List of all assets
+  static List<String> get values => [aEnv];
 }
 
 class AssetGenImage {

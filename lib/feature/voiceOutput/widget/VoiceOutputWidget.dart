@@ -1,5 +1,8 @@
+import 'package:audioplayers/audioplayers.dart';
+import 'package:blueberry_flutter_template/gen/assets.gen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+
 import '../provider/VoiceOutputProvider.dart';
 
 class VoiceOutputWidget extends ConsumerWidget {
@@ -27,7 +30,7 @@ class VoiceOutputWidget extends ConsumerWidget {
         children: data
             .map((text) => Padding(
                   padding: const EdgeInsets.symmetric(vertical: 8.0),
-                  child: VoiceOutputRow(text: text),
+                  child: VoiceOutputRow(text: text, index: data.indexOf(text)),
                 ))
             .toList(),
       ),
@@ -37,8 +40,10 @@ class VoiceOutputWidget extends ConsumerWidget {
 
 class VoiceOutputRow extends StatelessWidget {
   final String text;
+  final int index;
+  final player = AudioPlayer();
 
-  const VoiceOutputRow({super.key, required this.text});
+  VoiceOutputRow({super.key, required this.text, required this.index});
 
   @override
   Widget build(BuildContext context) {
@@ -56,7 +61,10 @@ class VoiceOutputRow extends StatelessWidget {
           ),
           const SizedBox(width: 8),
           ElevatedButton(
-            onPressed: () {},
+            onPressed: () {
+              final source = AssetSource("voice/voice_${index+1}.mp3");
+              player.play(source);
+            },
             child: const Text("button"),
           ),
         ],
