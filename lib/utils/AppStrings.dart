@@ -178,9 +178,9 @@ class AppStrings {
 
   // Onboarding Screen
   static const String onboardingTitle = '환영합니다!';
-  static const String onboardingDescription = '우리 앱으로 최고의 경험을 해보세요.';
-  static const String onboardingTitle2 = '연결 유지';
-  static const String onboardingDescription2 = '사랑하는 사람들과 항상 연결되세요.';
+  static const String onboardingDescription = '혼자 자취하는 사람들을 위한 세이프 보이스 앱입니다.';
+  static const String onboardingTitle2 = '목소리 설정';
+  static const String onboardingDescription2 = '남자 목소리를 출력해서, 수상한 사람이 접근하는 상황에서 도움이 될 수 있어요.';
   static const String onboardingTitle3 = '시작하기';
   static const String onboardingDescription3 = '여정을 시작해봅시다!';
   static const String onboardingScreenButtonStart = '시작하기';

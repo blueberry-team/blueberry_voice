@@ -115,6 +115,7 @@ dependencies:
 
   # audio player
   audioplayers: ^6.0.0
+  lottie: ^3.1.2
 
 
 
@@ -140,10 +141,7 @@ flutter:
     - assets/icon/
     - assets/login_page_images/
     - assets/voice/
-    - assets/voice/voice_1.mp3
-    - assets/voice/voice_2.mp3
-    - assets/voice/voice_3.mp3
-    - assets/voice/voice_4.mp3
+    - assets/lottie/
 
 # Run Commands to generate splash view
 # 1) flutter clean
