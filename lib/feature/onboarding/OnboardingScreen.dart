@@ -1,12 +1,11 @@
 import 'package:blueberry_flutter_template/core/TopScreen.dart';
 import 'package:blueberry_flutter_template/feature/onboarding/widgets/OnboardingPageViewBuilder.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_custom_page_steps_indication/CustomPageStepsIndication.dart';
 import 'package:go_router/go_router.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'OnboardingData.dart';
-import 'widgets/OnboardingDotWidget.dart';
-import 'widgets/OnboardingPageButton.dart';
 
 class OnboardingScreen extends StatefulWidget {
   static const String name = 'OnboardingScreen';
@@ -68,11 +67,20 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             flex: 1,
             child: Column(
               children: [
-                OnboardingDotWidget(currentPage: _currentPage),
-                const SizedBox(height: 20),
-                OnboardingPageButton(
-                  currentPage: _currentPage,
-                  onNextPressed: _onNextPressed,
+                StepProgress(
+                  totalSteps: OnboardingData.pageDataList.length,
+                  currentStep: _currentPage,
+                  activeColor: Colors.blue,
+                  inactiveColor: Colors.grey,
+                  onNext: (int) {
+                    _onNextPressed();
+                  },
+                  onBack: (int) {
+                    _pageController.previousPage(
+                      duration: const Duration(milliseconds: 300),
+                      curve: Curves.easeIn,
+                    );
+                  },
                 ),
               ],
             ),
