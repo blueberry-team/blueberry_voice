@@ -126,6 +126,7 @@ dev_dependencies:
   # Generate
   json_serializable: ^6.8.0
   build_runner: ^2.4.11
+  flutter_launcher_icons: "^0.13.1"
 
 
 flutter:
@@ -142,6 +143,7 @@ flutter:
     - assets/login_page_images/
     - assets/voice/
     - assets/lottie/
+    - assets/launcher_icon/
 
 # Run Commands to generate splash view
 # 1) flutter clean
@@ -163,10 +165,10 @@ flutter_native_splash:
 flutter_launcher_icons:
   android: "launcher_icon"
   ios: true
-  image_path: "assets/logo/logo_5.png"
+  image_path: "assets/launcher_icon/launcherIcon.png"
   min_sdk_android: 23 # android min sdk min:16, default 21
   web:
     generate: true
-    image_path: "assets/logo/logo_5.png"
+    image_path: "assets/launcher_icon/launcherIcon.png"
     background_color: "#hexcode"
     theme_color: "#hexcode"
