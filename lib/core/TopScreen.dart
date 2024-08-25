@@ -23,7 +23,7 @@ class TopScreen extends ConsumerWidget {
     final selectedIndex = ref.watch(selectedIndexProvider);
 
     final List<Widget> pages = [
-      const VoiceOutputScreen(),
+      VoiceOutputScreen(),
       const PoliceMapScreen(),
       const MyPageScreen(),
     ];
