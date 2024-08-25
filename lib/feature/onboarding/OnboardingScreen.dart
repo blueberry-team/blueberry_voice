@@ -70,8 +70,10 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 StepProgress(
                   totalSteps: OnboardingData.pageDataList.length,
                   currentStep: _currentPage,
-                  activeColor: Colors.blue,
-                  inactiveColor: Colors.grey,
+                  continueButtonColor: Colors.black,
+                  backButtonColor: Colors.blue,
+                  finishButtonColor: Colors.red,
+                  enableFinishButtonGlow: false,
                   onNext: (int) {
                     _onNextPressed();
                   },
@@ -81,7 +83,10 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                       curve: Curves.easeIn,
                     );
                   },
-                ),
+                  onFinish: () {
+                    context.goNamed(TopScreen.name);
+                  },
+                )
               ],
             ),
           ),
