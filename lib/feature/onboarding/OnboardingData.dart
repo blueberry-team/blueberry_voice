@@ -11,12 +11,12 @@ class OnboardingData {
     {
       title: AppStrings.onboardingTitle,
       description: AppStrings.onboardingDescription,
-      image: Assets.images.sample
+      image: Assets.images.safehouse
     },
     {
       title: AppStrings.onboardingTitle2,
       description: AppStrings.onboardingDescription2,
-      image: Assets.images.sample
+      image: Assets.images.phone
     },
     {
       title: AppStrings.onboardingTitle3,

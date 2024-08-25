@@ -98,11 +98,17 @@ class $AssetsIconGen {
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
+  /// File path: assets/images/phone.svg
+  String get phone => 'assets/images/phone.svg';
+
+  /// File path: assets/images/safehouse.svg
+  String get safehouse => 'assets/images/safehouse.svg';
+
   /// File path: assets/images/sample.svg
   String get sample => 'assets/images/sample.svg';
 
   /// List of all assets
-  List<String> get values => [sample];
+  List<String> get values => [phone, safehouse, sample];
 }
 
 class $AssetsLoginPageImagesGen {
@@ -158,6 +164,16 @@ class $AssetsLogoGen {
       [logo, logo1, logo2, logo3, logo4, logo5, mbtiLogo, voiceLogo];
 }
 
+class $AssetsLottieGen {
+  const $AssetsLottieGen();
+
+  /// File path: assets/lottie/splash.json
+  String get splash => 'assets/lottie/splash.json';
+
+  /// List of all assets
+  List<String> get values => [splash];
+}
+
 class $AssetsVoiceGen {
   const $AssetsVoiceGen();
 
@@ -189,6 +205,7 @@ class Assets {
   static const $AssetsLoginPageImagesGen loginPageImages =
       $AssetsLoginPageImagesGen();
   static const $AssetsLogoGen logo = $AssetsLogoGen();
+  static const $AssetsLottieGen lottie = $AssetsLottieGen();
   static const $AssetsVoiceGen voice = $AssetsVoiceGen();
 
   /// List of all assets
