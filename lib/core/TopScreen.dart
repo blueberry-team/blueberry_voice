@@ -63,26 +63,39 @@ class CustomBottomNavigationBar extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: List.generate(3, (index) {
-          return GestureDetector(
-            onTap: () => onPageChanged(index),
-            child: Container(
-              width: 20,
-              height: 50,
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                color: index == currentIndex ? Colors.blue : Colors.grey,
-              ),
-              child: index == currentIndex
-                  ? Align(
-                      alignment: Alignment.bottomCenter,
-                      child: Container(
-                        width: 10,
-                        height: 2,
-                        color: Colors.blue,
+          return Material(
+            color: Colors.transparent,
+            child: InkWell(
+              onTap: () => onPageChanged(index),
+              customBorder: const CircleBorder(),
+              child: Container(
+                width: 100,
+                height: 100,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Container(
+                      width: 30,
+                      height: 30,
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: index == currentIndex ? Colors.blue : Colors.grey,
                       ),
-                    )
-                  : null,
-            ),
+                    ),
+                    const SizedBox(height: 3,),
+                    if (index == currentIndex)
+                      Container(
+                        width: 20,
+                        height: 6,
+                        decoration: BoxDecoration(
+                          color: Colors.blue,
+                          borderRadius: BorderRadius.circular(10)
+                        ),
+                      ),
+                  ],
+                ),
+              )
+          ),
           );
         }),
       ),
