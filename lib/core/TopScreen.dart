@@ -32,29 +32,59 @@ class TopScreen extends ConsumerWidget {
       body: Center(
         child: pages[selectedIndex],
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        type: BottomNavigationBarType.fixed,
-        selectedIconTheme: const IconThemeData(color: Colors.black),
-        selectedItemColor: Colors.black,
-        unselectedIconTheme: const IconThemeData(color: Colors.grey),
-        backgroundColor: Colors.blueGrey[100],
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.mic),
-            label: 'Voice',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.map),
-            label: 'Map',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person),
-            label: 'MyPage',
-          ),
-        ],
+      bottomNavigationBar: CustomBottomNavigationBar(
         currentIndex: selectedIndex,
-        onTap: (index) =>
-            ref.read(selectedIndexProvider.notifier).state = index,
+        onPageChanged: (index) {
+          ref.read(selectedIndexProvider.notifier).state = index;
+        },
+      ),
+    );
+  }
+}
+
+class CustomBottomNavigationBar extends StatelessWidget {
+  final int currentIndex;
+  final ValueChanged<int> onPageChanged;
+
+  CustomBottomNavigationBar({
+    required this.currentIndex,
+    required this.onPageChanged,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: EdgeInsets.only(bottom: 60.0),
+      padding: EdgeInsets.symmetric(horizontal: 20.0),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.vertical(top: Radius.circular(16)),
+      ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: List.generate(3, (index) {
+          return GestureDetector(
+            onTap: () => onPageChanged(index),
+            child: Container(
+              width: 20,
+              height: 50,
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                color: index == currentIndex ? Colors.blue : Colors.grey,
+              ),
+              child: index == currentIndex
+                  ? Align(
+                      alignment: Alignment.bottomCenter,
+                      child: Container(
+                        width: 10,
+                        height: 2,
+                        color: Colors.blue,
+                      ),
+                    )
+                  : null,
+            ),
+          );
+        }),
       ),
     );
   }
