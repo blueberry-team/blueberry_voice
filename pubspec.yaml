@@ -117,6 +117,9 @@ dependencies:
   audioplayers: ^6.0.0
   lottie: ^3.1.2
 
+  # page indicator
+  flutter_custom_page_steps_indication: ^1.1.1
+
 
 
 dev_dependencies:
