@@ -53,7 +53,7 @@ class FirestoreService {
           .doc(userId)
           .set({'imageUrl': imageUrl});
     } catch (e) {
-      throw Exception('Failed to create mypage image: $e');
+      throw Exception('Failed to create setting image: $e');
     }
   }
 }

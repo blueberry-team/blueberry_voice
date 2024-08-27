@@ -1,6 +1,5 @@
-import 'package:blueberry_flutter_template/feature/map/PoliceMapScreen.dart';
-import 'package:blueberry_flutter_template/feature/mypage/MyPageScreen.dart';
 import 'package:blueberry_flutter_template/feature/send/SendMessageScreen.dart';
+import 'package:blueberry_flutter_template/feature/setting/SettingScreen.dart';
 import 'package:blueberry_flutter_template/feature/voiceOutput/VoiceOutputScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -26,7 +25,7 @@ class TopScreen extends ConsumerWidget {
     final List<Widget> pages = [
       const VoiceOutputScreen(),
       const SendMessageScreen(),
-      const MyPageScreen(),
+      const SettingScreen(),
     ];
 
     return Scaffold(
@@ -67,36 +66,37 @@ class CustomBottomNavigationBar extends StatelessWidget {
           return Material(
             color: Colors.transparent,
             child: InkWell(
-              onTap: () => onPageChanged(index),
-              customBorder: const CircleBorder(),
-              child: Container(
-                width: 100,
-                height: 100,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Container(
-                      width: 30,
-                      height: 30,
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        color: index == currentIndex ? Colors.blue : Colors.grey,
-                      ),
-                    ),
-                    const SizedBox(height: 3,),
-                    if (index == currentIndex)
+                onTap: () => onPageChanged(index),
+                customBorder: const CircleBorder(),
+                child: Container(
+                  width: 100,
+                  height: 100,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
                       Container(
-                        width: 20,
-                        height: 6,
+                        width: 30,
+                        height: 30,
                         decoration: BoxDecoration(
-                          color: Colors.blue,
-                          borderRadius: BorderRadius.circular(10)
+                          shape: BoxShape.circle,
+                          color:
+                              index == currentIndex ? Colors.blue : Colors.grey,
                         ),
                       ),
-                  ],
-                ),
-              )
-          ),
+                      const SizedBox(
+                        height: 3,
+                      ),
+                      if (index == currentIndex)
+                        Container(
+                          width: 20,
+                          height: 6,
+                          decoration: BoxDecoration(
+                              color: Colors.blue,
+                              borderRadius: BorderRadius.circular(10)),
+                        ),
+                    ],
+                  ),
+                )),
           );
         }),
       ),
