@@ -1,5 +1,6 @@
 import 'package:blueberry_flutter_template/feature/map/PoliceMapScreen.dart';
 import 'package:blueberry_flutter_template/feature/mypage/MyPageScreen.dart';
+import 'package:blueberry_flutter_template/feature/send/SendMessageScreen.dart';
 import 'package:blueberry_flutter_template/feature/voiceOutput/VoiceOutputScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -23,8 +24,8 @@ class TopScreen extends ConsumerWidget {
     final selectedIndex = ref.watch(selectedIndexProvider);
 
     final List<Widget> pages = [
-      VoiceOutputScreen(),
-      const PoliceMapScreen(),
+      const VoiceOutputScreen(),
+      const SendMessageScreen(),
       const MyPageScreen(),
     ];
 
