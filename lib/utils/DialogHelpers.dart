@@ -7,7 +7,7 @@ void showSuccessDialog(BuildContext context, String message) {
     context: context,
     builder: (BuildContext context) {
       return AlertDialog(
-        title: const Text(AppStrings.okButtonText),
+        title: const Text(AppStrings.showSuccessDialogTitle),
         content: Text(message),
         actions: <Widget>[
           TextButton(
@@ -27,7 +27,7 @@ void showErrorDialog(BuildContext context, String message) {
     context: context,
     builder: (BuildContext context) {
       return AlertDialog(
-        title: const Text(AppStrings.errorTitle),
+        title: const Text(AppStrings.showErrorDialogTitle),
         content: Text(message),
         actions: <Widget>[
           TextButton(

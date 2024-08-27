@@ -18,13 +18,15 @@ class AppStrings {
   static const String nickNameTextWidgetdefaultNickName = '닉네임';
   static const String nickNameTextWidgetError = '오류';
 
-  //MyPageScreen.dart
+  //SettingScreen.dart
   static const String myPageTitle = '내 페이지';
   static const String loginButtonText = '로그인';
   static const String logoutButtonText = '로그아웃';
   static const String welcomeBackText = '다시 오신 것을 환영합니다!';
   static const String signUpButtonText = '회원가입';
   static const String errorTitle = '오류';
+  static const String showSuccessDialogTitle = '성공';
+  static const String showErrorDialogTitle = '오류';
   static const String okButtonText = '확인';
   static const String loggedInMessage = '로그인 되었습니다.';
   static const String passwordForgot = '비밀번호를 잊어버렸나요?';
