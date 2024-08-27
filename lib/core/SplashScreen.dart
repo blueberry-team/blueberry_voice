@@ -1,3 +1,4 @@
+import 'package:blueberry_flutter_template/core/TopScreen.dart';
 import 'package:blueberry_flutter_template/feature/onboarding/OnboardingScreen.dart';
 import 'package:blueberry_flutter_template/gen/assets.gen.dart';
 import 'package:flutter/material.dart';
@@ -37,7 +38,7 @@ class _SplashScreenState extends State<SplashScreen> {
       // 초기화 완료 후 메인 화면으로 전환
       if (mounted) {
         hasSeenOnboarding
-                ? context.goNamed(OnboardingScreen.name) // 온보딩 화면을 본 경우
+                ? context.goNamed(TopScreen.name) // 온보딩 화면을 본 경우
                 : context.goNamed(OnboardingScreen.name) // 온보딩 화면을 보지 않은 경우
             ;
       }
@@ -61,7 +62,6 @@ class _SplashScreenState extends State<SplashScreen> {
   Widget build(BuildContext context) {
     // 모바일인 경우 스플래쉬 스크린 표시
     return Scaffold(
-      backgroundColor: Colors.white, // 배경색 설정
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,

@@ -36,7 +36,7 @@ class SendMessageTitleText extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Text(
       '경찰서에 문자하기',
-      style: black24TextStyle,
+      style: black28boldTextStyle,
     );
   }
 }

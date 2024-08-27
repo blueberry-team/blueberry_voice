@@ -1,4 +1,5 @@
 import 'package:blueberry_flutter_template/feature/send/provider/messageIndexProvider.dart';
+import 'package:blueberry_flutter_template/utils/AppTextStyle.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -19,10 +20,7 @@ class SendMessagePreview extends ConsumerWidget {
             Text(
               messages[index],
               textAlign: TextAlign.center,
-              style: TextStyle(
-                fontSize: 32.0,
-                fontWeight: FontWeight.bold,
-              ),
+              style: black28boldTextStyle,
             ),
             SizedBox(height: 60),
 

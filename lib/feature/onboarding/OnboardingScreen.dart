@@ -1,5 +1,6 @@
 import 'package:blueberry_flutter_template/core/TopScreen.dart';
 import 'package:blueberry_flutter_template/feature/onboarding/widgets/OnboardingPageViewBuilder.dart';
+import 'package:blueberry_flutter_template/utils/AppColors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_custom_page_steps_indication/CustomPageStepsIndication.dart';
 import 'package:go_router/go_router.dart';
@@ -70,9 +71,9 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 StepProgress(
                   totalSteps: OnboardingData.pageDataList.length,
                   currentStep: _currentPage,
-                  continueButtonColor: Colors.black,
-                  backButtonColor: Colors.blue,
-                  finishButtonColor: Colors.red,
+                  continueButtonColor: accentColor,
+                  backButtonColor: textColor,
+                  finishButtonColor: accentColor,
                   enableFinishButtonGlow: false,
                   onNext: (int) {
                     _onNextPressed();

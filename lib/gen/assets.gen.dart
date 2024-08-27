@@ -107,8 +107,22 @@ class $AssetsImagesGen {
   /// File path: assets/images/sample.svg
   String get sample => 'assets/images/sample.svg';
 
+  /// File path: assets/images/smile.svg
+  String get smile => 'assets/images/smile.svg';
+
   /// List of all assets
-  List<String> get values => [phone, safehouse, sample];
+  List<String> get values => [phone, safehouse, sample, smile];
+}
+
+class $AssetsLauncherIconGen {
+  const $AssetsLauncherIconGen();
+
+  /// File path: assets/launcher_icon/launcherIcon.png
+  AssetGenImage get launcherIcon =>
+      const AssetGenImage('assets/launcher_icon/launcherIcon.png');
+
+  /// List of all assets
+  List<AssetGenImage> get values => [launcherIcon];
 }
 
 class $AssetsLoginPageImagesGen {
@@ -202,6 +216,7 @@ class Assets {
   static const $Assets700x150Gen a700x150 = $Assets700x150Gen();
   static const $AssetsIconGen icon = $AssetsIconGen();
   static const $AssetsImagesGen images = $AssetsImagesGen();
+  static const $AssetsLauncherIconGen launcherIcon = $AssetsLauncherIconGen();
   static const $AssetsLoginPageImagesGen loginPageImages =
       $AssetsLoginPageImagesGen();
   static const $AssetsLogoGen logo = $AssetsLogoGen();

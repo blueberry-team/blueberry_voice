@@ -1,4 +1,5 @@
 import 'package:blueberry_flutter_template/feature/send/provider/messageIndexProvider.dart';
+import 'package:blueberry_flutter_template/utils/AppColors.dart';
 import 'package:blueberry_flutter_template/utils/AppStrings.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -11,7 +12,7 @@ class SendMessageButton extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final index = ref.watch(messageIndexProvider);
     return CircleAvatar(
-      backgroundColor: Colors.black,
+      backgroundColor: accentColor,
       radius: 50,
       child: IconButton(
         onPressed: () async {

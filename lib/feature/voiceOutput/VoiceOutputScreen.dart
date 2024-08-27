@@ -35,7 +35,7 @@ class VoiceOutputTitleText extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Text(
       '남자 음성 출력 하기',
-      style: black24TextStyle,
+      style: black28boldTextStyle,
     );
   }
 }

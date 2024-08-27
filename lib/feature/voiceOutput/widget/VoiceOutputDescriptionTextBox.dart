@@ -1,4 +1,5 @@
 import 'package:blueberry_flutter_template/feature/voiceOutput/provider/CategoryIondexProvider.dart';
+import 'package:blueberry_flutter_template/utils/AppColors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -19,11 +20,11 @@ class VoiceOutputDescriptionTextBox extends ConsumerWidget {
     ];
 
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 60),
+      padding: const EdgeInsets.symmetric(horizontal: 20),
       child: Container(
           width: double.infinity,
           decoration: BoxDecoration(
-            color: Colors.grey.shade300,
+            color: accentColor,
             borderRadius: BorderRadius.circular(14),
           ),
           child: Center(
@@ -37,7 +38,7 @@ class VoiceOutputDescriptionTextBox extends ConsumerWidget {
                   descriptionList[categoryIndex],
                   style: const TextStyle(
                     fontSize: 16,
-                    color: Colors.black,
+                    color: textColor,
                   ),
                 ),
                 const SizedBox(width: 16),
