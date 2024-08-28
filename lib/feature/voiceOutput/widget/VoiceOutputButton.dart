@@ -1,7 +1,10 @@
+import 'package:audioplayers/audioplayers.dart';
 import 'package:blueberry_flutter_template/feature/voiceOutput/provider/CategoryIondexProvider.dart';
 import 'package:blueberry_flutter_template/utils/AppColors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+
+final player = AudioPlayer();
 
 class VoiceOutputButton extends ConsumerWidget {
   const VoiceOutputButton({super.key});
@@ -14,7 +17,7 @@ class VoiceOutputButton extends ConsumerWidget {
       radius: 50,
       child: IconButton(
         onPressed: () {
-          print('음성 출력: ${categoryIndex}');
+          player.play(AssetSource('voice/voice_${categoryIndex + 1}.wav'));
         },
         icon: const Icon(Icons.volume_up),
         color: Colors.white,
