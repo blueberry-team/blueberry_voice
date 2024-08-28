@@ -21,7 +21,7 @@ class OnboardingData {
     {
       title: AppStrings.onboardingTitle3,
       description: AppStrings.onboardingDescription3,
-      image: Assets.images.sample
+      image: Assets.images.smile
     },
   ];
 }

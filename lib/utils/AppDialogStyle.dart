@@ -6,8 +6,8 @@ class DialogStyle extends ThemeExtension<DialogStyle> {
   const DialogStyle({
     this.title = black16BoldTextStyle,
     this.description = black12TextStyle,
-    this.cancelButtonText = blue16BoldTextStyle,
-    this.agreeButtonText = blue16TextStyle,
+    this.cancelButtonText = black16BoldTextStyle,
+    this.agreeButtonText = black16BoldTextStyle,
   });
 
   final TextStyle? title;

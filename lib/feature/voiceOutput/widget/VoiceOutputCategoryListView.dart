@@ -1,7 +1,10 @@
 import 'package:blueberry_flutter_template/feature/voiceOutput/provider/CategoryIondexProvider.dart';
+import 'package:blueberry_flutter_template/gen/assets.gen.dart';
+import 'package:blueberry_flutter_template/utils/AppColors.dart';
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class VoiceOutputCategoryListView extends ConsumerWidget {
   const VoiceOutputCategoryListView({super.key});
@@ -9,7 +12,8 @@ class VoiceOutputCategoryListView extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     // 카테고리 데이터를 리스트로 정의
-    final categories = ['화내는 남편', '놀러온 남자', '데이트 준비중', '조직폭력배 남자'];
+    final categories = ['마중 나온 남자', '약간 다투는 남자', '혼자 이야기 하는 남자'];
+    final svgImages = [Assets.images.a1Smile, Assets.images.a2Angry, Assets.images.a3Funny];
 
     return CarouselSlider(
       options: CarouselOptions(
@@ -31,14 +35,11 @@ class VoiceOutputCategoryListView extends ConsumerWidget {
                   flex: 2, // 여유 공간의 2/3 사용
                   child: CircleAvatar(
                     radius: 80, // 원의 크기 조정
-                    backgroundColor: Colors.blue, // 원의 배경색
-                    child: Text(
-                      category[0], // 카테고리 이름의 첫 글자
-                      style: const TextStyle(
-                        color: Colors.white, // 텍스트 색상
-                        fontSize: 40, // 텍스트 크기
-                        fontWeight: FontWeight.bold, // 텍스트 두께
-                      ),
+                    backgroundColor: primaryColor, // 원의 배경색
+                    child: SvgPicture.asset(
+                      svgImages[categories.indexOf(category)], // SVG 이미지 표시
+                      width: 100, // SVG 이미지 너비
+                      height: 100, // SVG 이미지 높이
                     ),
                   ),
                 ),

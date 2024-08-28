@@ -98,6 +98,15 @@ class $AssetsIconGen {
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
+  /// File path: assets/images/1_smile.svg
+  String get a1Smile => 'assets/images/1_smile.svg';
+
+  /// File path: assets/images/2_angry.svg
+  String get a2Angry => 'assets/images/2_angry.svg';
+
+  /// File path: assets/images/3_funny.svg
+  String get a3Funny => 'assets/images/3_funny.svg';
+
   /// File path: assets/images/phone.svg
   String get phone => 'assets/images/phone.svg';
 
@@ -107,8 +116,23 @@ class $AssetsImagesGen {
   /// File path: assets/images/sample.svg
   String get sample => 'assets/images/sample.svg';
 
+  /// File path: assets/images/smile.svg
+  String get smile => 'assets/images/smile.svg';
+
   /// List of all assets
-  List<String> get values => [phone, safehouse, sample];
+  List<String> get values =>
+      [a1Smile, a2Angry, a3Funny, phone, safehouse, sample, smile];
+}
+
+class $AssetsLauncherIconGen {
+  const $AssetsLauncherIconGen();
+
+  /// File path: assets/launcher_icon/launcherIcon.png
+  AssetGenImage get launcherIcon =>
+      const AssetGenImage('assets/launcher_icon/launcherIcon.png');
+
+  /// List of all assets
+  List<AssetGenImage> get values => [launcherIcon];
 }
 
 class $AssetsLoginPageImagesGen {
@@ -177,20 +201,17 @@ class $AssetsLottieGen {
 class $AssetsVoiceGen {
   const $AssetsVoiceGen();
 
-  /// File path: assets/voice/voice_1.mp3
-  String get voice1 => 'assets/voice/voice_1.mp3';
+  /// File path: assets/voice/voice_1.wav
+  String get voice1 => 'assets/voice/voice_1.wav';
 
-  /// File path: assets/voice/voice_2.mp3
-  String get voice2 => 'assets/voice/voice_2.mp3';
+  /// File path: assets/voice/voice_2.wav
+  String get voice2 => 'assets/voice/voice_2.wav';
 
-  /// File path: assets/voice/voice_3.mp3
-  String get voice3 => 'assets/voice/voice_3.mp3';
-
-  /// File path: assets/voice/voice_4.mp3
-  String get voice4 => 'assets/voice/voice_4.mp3';
+  /// File path: assets/voice/voice_3.wav
+  String get voice3 => 'assets/voice/voice_3.wav';
 
   /// List of all assets
-  List<String> get values => [voice1, voice2, voice3, voice4];
+  List<String> get values => [voice1, voice2, voice3];
 }
 
 class Assets {
@@ -202,6 +223,7 @@ class Assets {
   static const $Assets700x150Gen a700x150 = $Assets700x150Gen();
   static const $AssetsIconGen icon = $AssetsIconGen();
   static const $AssetsImagesGen images = $AssetsImagesGen();
+  static const $AssetsLauncherIconGen launcherIcon = $AssetsLauncherIconGen();
   static const $AssetsLoginPageImagesGen loginPageImages =
       $AssetsLoginPageImagesGen();
   static const $AssetsLogoGen logo = $AssetsLogoGen();

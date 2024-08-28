@@ -1,6 +1,7 @@
 import 'package:blueberry_flutter_template/feature/send/SendMessageScreen.dart';
 import 'package:blueberry_flutter_template/feature/setting/SettingScreen.dart';
 import 'package:blueberry_flutter_template/feature/voiceOutput/VoiceOutputScreen.dart';
+import 'package:blueberry_flutter_template/utils/AppColors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -53,52 +54,54 @@ class CustomBottomNavigationBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: EdgeInsets.only(bottom: 60.0),
-      padding: EdgeInsets.symmetric(horizontal: 20.0),
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.vertical(top: Radius.circular(16)),
-      ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: List.generate(3, (index) {
-          return Material(
-            color: Colors.transparent,
-            child: InkWell(
-                onTap: () => onPageChanged(index),
-                customBorder: const CircleBorder(),
-                child: Container(
-                  width: 100,
-                  height: 100,
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Container(
-                        width: 30,
-                        height: 30,
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          color:
-                              index == currentIndex ? Colors.blue : Colors.grey,
-                        ),
-                      ),
-                      const SizedBox(
-                        height: 3,
-                      ),
-                      if (index == currentIndex)
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 40.0),
+      child: Container(
+        margin: const EdgeInsets.only(bottom: 60.0),
+        decoration: BoxDecoration(
+          color: accentColor,
+          borderRadius: BorderRadius.circular(28.0),
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: List.generate(3, (index) {
+            return Material(
+              color: Colors.transparent,
+              child: InkWell(
+                  onTap: () => onPageChanged(index),
+                  customBorder: const CircleBorder(),
+                  child: SizedBox(
+                    width: 100,
+                    height: 80,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
                         Container(
-                          width: 20,
-                          height: 6,
+                          width: 30,
+                          height: 30,
                           decoration: BoxDecoration(
-                              color: Colors.blue,
-                              borderRadius: BorderRadius.circular(10)),
+                            shape: BoxShape.circle,
+                            color:
+                                index == currentIndex ? Colors.white : accentColor2,
+                          ),
                         ),
-                    ],
-                  ),
-                )),
-          );
-        }),
+                        const SizedBox(
+                          height: 3,
+                        ),
+                        if (index == currentIndex)
+                          Container(
+                            width: 20,
+                            height: 6,
+                            decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(10)),
+                          ),
+                      ],
+                    ),
+                  )),
+            );
+          }),
+        ),
       ),
     );
   }

@@ -1,26 +1,27 @@
 import 'package:flutter/material.dart';
+
 import 'AppColors.dart';
 import 'AppDialogStyle.dart';
 import 'AppTextStyle.dart';
 
 final ThemeData lightTheme = ThemeData(
   listTileTheme: const ListTileThemeData(
-    tileColor: white,
-    textColor: black,
+    tileColor: primaryColor,
+    textColor: textColor,
     contentPadding: EdgeInsets.symmetric(horizontal: 20),
     horizontalTitleGap: 0,
     minVerticalPadding: 0,
     dense: true,
   ),
   colorScheme: ColorScheme.fromSeed(
-    seedColor: white,
-    primary: black,
-    secondary: greySecondary,
+    seedColor: Colors.white,
+    primary: accentColor, // 다이얼로그 기본 확인 버튼
+    secondary: Colors.green,
   ),
   appBarTheme: const AppBarTheme(
-    color: white,
+    color: primaryColor,
     iconTheme: IconThemeData(
-      color: blue,
+      color: primaryColor,
     ),
     titleTextStyle: black16BoldTextStyle,
   ),
@@ -44,25 +45,28 @@ final ThemeData lightTheme = ThemeData(
   extensions: const <ThemeExtension<dynamic>>{
     DialogStyle(),
   },
-  dividerColor: greySecondary.withOpacity(0.1),
-  scaffoldBackgroundColor: white,
+  dividerColor: accentColor.withOpacity(0.1),
+  scaffoldBackgroundColor: primaryColor,
 );
 
 final ThemeData darkTheme = ThemeData(
   listTileTheme: const ListTileThemeData(
-    tileColor: black,
-    textColor: white,
+    tileColor: primaryDarkColor,
+    textColor: darkTextColor,
     contentPadding: EdgeInsets.symmetric(horizontal: 20),
     horizontalTitleGap: 0,
     minVerticalPadding: 0,
     dense: true,
   ),
   colorScheme: ColorScheme.fromSeed(
-      seedColor: white, primary: black, secondary: greySecondary),
+    seedColor: Colors.white,
+    primary: Colors.red,
+    secondary: Colors.blue,
+  ),
   appBarTheme: const AppBarTheme(
-    color: black,
+    color: primaryDarkColor,
     iconTheme: IconThemeData(
-      color: blue,
+      color: primaryDarkColor,
     ),
     titleTextStyle: white16BoldTextStyle,
   ),
@@ -86,6 +90,6 @@ final ThemeData darkTheme = ThemeData(
   extensions: const <ThemeExtension<dynamic>>{
     DialogStyle(),
   },
-  dividerColor: greySecondary.withOpacity(0.1),
-  scaffoldBackgroundColor: black,
+  dividerColor: accentColor.withOpacity(0.1),
+  scaffoldBackgroundColor: primaryDarkColor,
 );

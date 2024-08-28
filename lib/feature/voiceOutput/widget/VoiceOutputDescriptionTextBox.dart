@@ -1,4 +1,5 @@
 import 'package:blueberry_flutter_template/feature/voiceOutput/provider/CategoryIondexProvider.dart';
+import 'package:blueberry_flutter_template/utils/AppColors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -11,19 +12,14 @@ class VoiceOutputDescriptionTextBox extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final categoryIndex = ref.watch(categoryIndexProvider);
 
-    final descriptionList = [
-      '너는 항상 왜 그러는 거야?',
-      '늦었네..?',
-      '오늘도 수고 많았어~',
-      '뭐? 어떤 놈인데?',
-    ];
+    final descriptionList = ['잘 갔다 왔어? 오늘 좀 늦었네?', '왔어? 우리 이야기 좀 하자', '아~ 진짜 드디어 왔네..'];
 
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 60),
+      padding: const EdgeInsets.symmetric(horizontal: 20),
       child: Container(
           width: double.infinity,
           decoration: BoxDecoration(
-            color: Colors.grey.shade300,
+            color: accentColor,
             borderRadius: BorderRadius.circular(14),
           ),
           child: Center(
@@ -37,7 +33,7 @@ class VoiceOutputDescriptionTextBox extends ConsumerWidget {
                   descriptionList[categoryIndex],
                   style: const TextStyle(
                     fontSize: 16,
-                    color: Colors.black,
+                    color: textColor,
                   ),
                 ),
                 const SizedBox(width: 16),
